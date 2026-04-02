@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India State-wise NFHS Dashboard</title>
+    <!-- Dependencies: Leaflet, Chart.js, PapaParse, Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <h1 class="logo">NFHS Dashboard</h1>
+            <a href="scatter.html" style="display:inline-block; margin-bottom:1rem; color:var(--accent); text-decoration:none; font-weight:500;">Compare NFHS-4 vs NFHS-5 →</a>
+            <p class="subtitle">National Family Health Survey Data</p>
+            
+            <div class="control-group">
+                <label for="category">Category</label>
+                <select id="category"></select>
+            </div>
+            
+            <div class="control-group">
+                <label for="indicator">Indicator</label>
+                <select id="indicator"></select>
+            </div>
+            
+            <div class="control-group">
+                <label>Region</label>
+                <div class="radio-group" id="region-group">
+                    <label><input type="radio" name="region" value="Total" checked> Total</label>
+                    <label><input type="radio" name="region" value="Rural"> Rural</label>
+                    <label><input type="radio" name="region" value="Urban"> Urban</label>
+                </div>
+            </div>
+
+            <div class="stats-panel" id="national-stats">
+                 <h3>All India Baseline <span id="reg-badge"></span></h3>
+                 <div class="stat-box">
+                      <span class="stat-label">NFHS-4</span>
+                      <span class="stat-value" id="all-india-nfhs4">-</span>
+                 </div>
+                 <div class="stat-box">
+                      <span class="stat-label">NFHS-5</span>
+                      <span class="stat-value" id="all-india-nfhs5">-</span>
+                 </div>
+                 <span class="unit" id="stat-unit"></span>
+                 <p class="note" id="stat-note"></p>
+            </div>
+        </aside>
+        
+        <main class="content">
+            <div class="map-container glass-panel">
+                <h2 id="map-title">Indicator Map</h2>
+                <div id="map"></div>
+            </div>
+            <div class="chart-container glass-panel">
+                <h2>State Rankings (NFHS-5)</h2>
+                <div class="canvas-wrapper">
+                    <canvas id="rankingChart"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

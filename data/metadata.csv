@@ -1,0 +1,10 @@
+organisation,Ministry of Health and Family Welfare
+sectors,"Health and Family Welfare"
+updated_frequency,As and when
+granularity,"State, Region, Indicator"
+time_saved,6 hours
+source,"National Family Health Survey: Key Findings for NFHS - 4 ", " National Family Health Survey: Key Findings for NFHS - 5 ", " Data.gov.in"
+source_link,"http://rchiips.org/nfhs/factsheet_NFHS-4.shtml ", "http://rchiips.org/nfhs/factsheet_NFHS-5.shtml ", " https://www.data.gov.in/resource/all-india-and-stateut-wise-factsheets-national-family-health-survey-nfhs-5-2019-2021"
+time_period,"2015-16, 2019-21"
+units,"value in absolute number, value in rupees, value in percentage"
+citation,"Ministry of Health and Family Welfare. National Family Health Survey (NFHS): State- and Region-wise Statistical Indicators Data on Family Profile and Health Status in India [Data set]. Dataful. https://dataful.in/datasets/18683/18683"

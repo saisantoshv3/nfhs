@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFHS-4 vs NFHS-5 Comparison</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .nav-link {
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .nav-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <h1 class="logo">NFHS Compare</h1>
+            <a href="index.html" class="nav-link">← Back to Map Dashboard</a>
+            
+            <p class="subtitle">Scatter Plot: NFHS-4 vs NFHS-5</p>
+            
+            <div class="control-group">
+                <label for="category">Category</label>
+                <select id="category"></select>
+            </div>
+            
+            <div class="control-group">
+                <label for="indicator">Indicator (Only showing those with both NFHS-4 & 5 data)</label>
+                <select id="indicator"></select>
+            </div>
+            
+            <div class="control-group">
+                <label>Region</label>
+                <div class="radio-group" id="region-group">
+                    <label><input type="radio" name="region" value="Total" checked> Total</label>
+                    <label><input type="radio" name="region" value="Rural"> Rural</label>
+                    <label><input type="radio" name="region" value="Urban"> Urban</label>
+                </div>
+            </div>
+
+            <div class="stats-panel" id="national-stats">
+                 <h3>All India Baseline <span id="reg-badge"></span></h3>
+                 <div class="stat-box">
+                      <span class="stat-label">NFHS-4</span>
+                      <span class="stat-value" id="all-india-nfhs4">-</span>
+                 </div>
+                 <div class="stat-box">
+                      <span class="stat-label">NFHS-5</span>
+                      <span class="stat-value" id="all-india-nfhs5">-</span>
+                 </div>
+                 <span class="unit" id="stat-unit"></span>
+                 <p class="note" id="stat-note"></p>
+            </div>
+        </aside>
+        
+        <main class="content" style="grid-template-columns: 1fr; grid-template-rows: 1fr;">
+            <div class="chart-container glass-panel">
+                <h2>State-wise Change (Points above the line = Increase in NFHS-5)</h2>
+                <div class="canvas-wrapper">
+                    <canvas id="scatterChart"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scatter.js"></script>
+</body>
+</html>
